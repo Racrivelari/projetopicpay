@@ -1,4 +1,4 @@
-package com.projetopicpay.domain.User;
+package com.projetopicpay.domain.user;
 
 import java.math.BigDecimal;
 
