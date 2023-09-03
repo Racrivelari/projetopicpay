@@ -1,5 +1,9 @@
 package com.projetopicpay.domain.User;
 
+import java.math.BigDecimal;
+
+import com.projetopicpay.enums.UserType;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -29,4 +33,8 @@ public class User {
 
     private String password;
 
+    private BigDecimal balance;
+
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 }
