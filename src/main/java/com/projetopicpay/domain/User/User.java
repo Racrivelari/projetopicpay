@@ -2,6 +2,7 @@ package com.projetopicpay.domain.user;
 
 import java.math.BigDecimal;
 
+import com.projetopicpay.dto.UserDTO;
 import com.projetopicpay.enums.UserType;
 
 import jakarta.persistence.*;
@@ -37,4 +38,13 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserDTO data){
+        this.fName = data.fName();
+        this.lName = data.lName();
+        this.balance = data.balance();
+        this.userType = data.userType();
+        this.email = data.email();
+        this.password = data.password();
+    }
 }

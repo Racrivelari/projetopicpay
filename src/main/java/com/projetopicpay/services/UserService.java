@@ -1,11 +1,14 @@
 package com.projetopicpay.services;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.projetopicpay.domain.user.User;
+import com.projetopicpay.dto.UserDTO;
 import com.projetopicpay.enums.UserType;
 import com.projetopicpay.repositories.UserRepository;
 
@@ -30,5 +33,15 @@ public class UserService {
 
     public void saveUser (User user){
         this.repository.save(user);
+    }
+
+    public User createUser(UserDTO data){
+        User newUser = new User(data);
+        this.saveUser(newUser);
+        return newUser;
+    }
+
+    public List<User> getAllUsers(){
+        return this.repository.findAll();
     }
 }
