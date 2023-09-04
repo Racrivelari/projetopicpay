@@ -1,6 +1,6 @@
 package com.projetopicpay.enums;
 
 public enum UserType {
-    COMMOM,
+    COMMON,
     MERCHANT 
 }
